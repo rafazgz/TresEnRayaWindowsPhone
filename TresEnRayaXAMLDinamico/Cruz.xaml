@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="TresEnRaya.TresEnRayaXAMLDinamico.Cruz"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+    xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions" 
+    mc:Ignorable="d"
+    Height="157" Width="146">
+    <UserControl.Resources>
+        <Storyboard x:Name="Storyboard1">
+    		<DoubleAnimation Duration="0" To="90" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="path" d:IsOptimized="True"/>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="grid">
+    			<EasingDoubleKeyFrame KeyTime="0" Value="0.323"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.403"/>
+    		</DoubleAnimationUsingKeyFrames>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="grid">
+    			<EasingDoubleKeyFrame KeyTime="0" Value="0.33"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.496"/>
+    		</DoubleAnimationUsingKeyFrames>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="grid">
+    			<EasingDoubleKeyFrame KeyTime="0" Value="47.5"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="48"/>
+    		</DoubleAnimationUsingKeyFrames>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="grid">
+    			<EasingDoubleKeyFrame KeyTime="0" Value="28.5"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="28.5"/>
+    		</DoubleAnimationUsingKeyFrames>
+    	</Storyboard>
+    </UserControl.Resources>
+
+    <UserControl.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </UserControl.FontFamily>
+    <UserControl.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </UserControl.FontSize>
+    <UserControl.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </UserControl.Foreground>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid x:Name="grid" Margin="-25,-4,72,58" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <CompositeTransform/>
+            </Grid.RenderTransform>
+            <i:Interaction.Triggers>
+                <i:EventTrigger>
+                    <eim:ControlStoryboardAction Storyboard="{StaticResource Storyboard1}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Path x:Name="path1" Data="M0,0 L98,102" UseLayoutRounding="False" StrokeThickness="6">
+            	<Path.Stroke>
+            		<RadialGradientBrush>
+            			<GradientStop Color="#FF161381" Offset="0"/>
+            			<GradientStop Color="#FF3D3AB2" Offset="0.997"/>
+            			<GradientStop Color="#FF3631DC" Offset="0.488"/>
+            		</RadialGradientBrush>
+            	</Path.Stroke>
+            </Path>
+            <Path x:Name="path" Data="M0,0 L98,102" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" StrokeThickness="6">
+            	<Path.Stroke>
+            		<RadialGradientBrush>
+            			<GradientStop Color="#FF161381" Offset="0"/>
+            			<GradientStop Color="#FF3D3AB2" Offset="0.997"/>
+            			<GradientStop Color="#FF3631DC" Offset="0.488"/>
+            		</RadialGradientBrush>
+            	</Path.Stroke>
+                <Path.RenderTransform>
+                    <CompositeTransform/>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+    </Grid>
+</UserControl>
+
